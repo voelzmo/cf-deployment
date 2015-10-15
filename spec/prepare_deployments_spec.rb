@@ -79,12 +79,12 @@ describe 'Manifest Generation' do
       end
     end
 
-    context 'when no config is provided', integration: true do
+    context 'when no config is provided' do
       let(:command) { "./tools/prepare-deployments aws" }
 
       it 'returns an error' do
         expect(result).to_not be_success
-        expect(std_error).to include 'No stubs provided'
+        expect(std_error).to include 'Path to config file not provided'
       end
     end
 
@@ -302,7 +302,7 @@ describe 'Manifest Generation' do
             manifest_file.write(YAML.dump(release_manifest))
             manifest_file.close
 
-            `cd #{stemcell_temp_dir} && tar -czf ./stemcell-release.tgz stemcell.MF`
+            `cd #{stemcell_temp_dir} && tar -czf ./stemcell-release.tgz ./stemcell.MF`
           end
 
           it 'correctly sets the stub' do

@@ -12,12 +12,12 @@
     }
   ],
 
-  "stemcells": [
-    { "name": "aws",
+  "stemcells": {
+    "aws": {
       "type": "bosh-aws-xen-hvm-ubuntu-trusty-go_agent",
       "version": "3100",
       "url": "https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3100",
       "sha1": "849134f21dd21d294084f4376179227254909bb4"
     }
-  ]
+  }
 }
