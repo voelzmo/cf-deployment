@@ -53,7 +53,7 @@ if [ -f "${BOSH_RELEASES_DIR}/diego-release/stubs-for-cf-release/enable_diego_ss
 fi
 
 "$mydir/prepare-deployments" \
-  warden \
+  bosh-lite \
   "${output_config_file}"
 
 bosh -d "${deployment_dir}/outputs/manifests/cf.yml" deploy
